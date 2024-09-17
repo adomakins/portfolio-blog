@@ -22,7 +22,7 @@ export default function Footer() {
                 <div className="flex gap-4 flex-wrap">
                     <InternalLink name="Home" url="/" />
                     <InternalLink name="About" url="/about" />
-                    <InternalLink name="Posts" url="/blog" />
+                    <InternalLink name="Posts" url="/posts" />
                     <InternalLink name="Projects" url="/projects" />
                     <InternalLink name="Tools" url="/tools" />
                 </div>

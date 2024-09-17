@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 
 // Get domain from url
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="py-20 px-2.5 sm:px-0 max-w-[600px] mx-auto w-full">
+        <Analytics />
         {children}
       </body>
     </html >
