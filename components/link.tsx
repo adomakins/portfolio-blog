@@ -10,10 +10,11 @@ interface LinkProps {
 export function ExternalLink({ name, url, color = 'black' }: LinkProps) {
     const textColor = color === 'black' ? 'text-black' : 'text-white';
     const borderColor = color === 'black' ? 'hover:border-black' : 'hover:border-white';
+    const borderBase = color === 'black' ? 'border-gray-200' : 'border-gray-400';
 
     return (
         <a href={url} target="_blank" rel="noopener noreferrer">
-            <span className={`flex w-fit items-center gap-1 border-b ${borderColor} transition-all duration-500`}>
+            <span className={`flex w-fit items-center gap-1 border-b ${borderBase} ${borderColor} transition-all duration-500`}>
                 <p className={`text-sm font-medium ${textColor}`}>{name}</p>
                 <ArrowUpRight className={`w-4 h-4 ${textColor}`} />
             </span>
@@ -24,10 +25,11 @@ export function ExternalLink({ name, url, color = 'black' }: LinkProps) {
 export function InternalLink({ name, url, color = 'black' }: LinkProps) {
     const textColor = color === 'black' ? 'text-black' : 'text-white';
     const borderColor = color === 'black' ? 'hover:border-black' : 'hover:border-white';
+    const borderBase = color === 'black' ? 'border-gray-200' : 'border-gray-400';
 
     return (
         <Link href={url} rel="noopener noreferrer">
-            <span className={`flex w-fit items-center gap-1 border-b ${borderColor} transition-all duration-500`}>
+            <span className={`flex w-fit items-center gap-1 border-b ${borderBase} ${borderColor} transition-all duration-500`}>
                 <p className={`text-sm font-medium ${textColor}`}>{name}</p>
                 <ArrowRight className={`w-4 h-4 ${textColor}`} />
             </span>

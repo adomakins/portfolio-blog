@@ -5,7 +5,6 @@ import Footer from '@/components/footer'
 import { FeaturedProject, RegularProject } from '@/components/projects'
 import { notionQuery } from '@/lib/utils'
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
-import { WideGrid } from '@/components/grid'
 import Timeline from '@/components/timeline'
 
 export const formatDateRange = (startDate: string, endDate: string | null) => {
@@ -64,11 +63,11 @@ export default async function Projects() {
             <Section>
                 <SectionTitle>Featured Projects</SectionTitle>
                 <ContentSpacer />
-                <WideGrid>
+                <div className='flex flex-col gap-4'>
                     {featuredFilter().map((item, index) => (
                         < FeaturedProject key={index} slug={item.slug} title={item.title} description={item.description} cover={item.cover} icon={item.icon} website={item.website} />
                     ))}
-                </WideGrid>
+                </div>
             </Section>
 
             <Section>

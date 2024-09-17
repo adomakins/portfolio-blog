@@ -42,7 +42,7 @@ export function IconTool({ title, description, link, icon }: ToolProps) {
             <div className="flex items-center border rounded-lg border-gray-200 p-4 w-full h-full gap-4 hover:shadow-md transition-all duration-500">
                 {icon && (
                     <div className="flex-shrink-0 overflow-hidden self-start">
-                        <Image src={icon} alt={title} width={36} height={36} className="rounded-lg" />
+                        <Image src={icon} alt={title} width={36} height={36} className="rounded-lg border-gray-200 border" />
                     </div>
                 )}
                 <ToolText title={title} description={description} />

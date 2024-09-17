@@ -37,11 +37,11 @@ export default async function Home() {
       <Section>
         <h1 className="card-title">Featured Projects</h1>
         <ContentSpacer />
-        <WideGrid>
+        <div className='flex flex-col gap-4'>
           {featuredProjects.map((project, index) => (
             <FeaturedProject key={index} title={project.title} description={project.description} slug={project.slug} website={project.website} icon={project.icon} cover={project.cover} />
           ))}
-        </WideGrid>
+        </div>
         <ContentSpacer />
         <InternalButton name='See All Projects' url='/projects' />
       </Section>

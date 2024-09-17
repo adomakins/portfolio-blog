@@ -15,8 +15,8 @@ export function CoverPost({ title, description, slug, thumbnail }: PostProps) {
         <Link href={`/posts/${slug}`} className="w-full h-full">
             <div className="flex flex-col items-center w-full h-full">
                 {thumbnail && (
-                    <div className="w-full aspect-[16/9] relative overflow-hidden rounded-lg shadow-md mb-4">
-                        <Image src={thumbnail} alt={title} fill className="object-cover" />
+                    <div className="w-full aspect-[16/9] relative overflow-hidden rounded-sm hover:shadow-sm shadow-md transition-all duration-500 mb-4">
+                        <Image src={thumbnail} alt={title} fill className="object-cover rounded-sm" />
                     </div>
                 )}
                 <div className='flex flex-col justify-start self-start w-full'>
@@ -36,7 +36,7 @@ export function TextPost({ title, description, slug, thumbnail, date, video }: P
     return (
         <div className="flex flex-col sm:flex-row gap-4">
             {thumbnail && (
-                <div className="w-full sm:w-1/3 aspect-[16/9] relative overflow-hidden rounded-lg shadow-md">
+                <div className="w-full sm:w-1/3 aspect-[16/9] relative overflow-hidden rounded-lg shadow-sm border-gray-200 border">
                     <Image src={thumbnail} alt={title} fill className="object-cover" />
                 </div>
             )}

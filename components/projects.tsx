@@ -3,24 +3,17 @@ import Image from 'next/image';
 import { MiniSpacer } from './section';
 import { ExternalLink, InternalLink } from './link';
 
-// const ProjectText = ({ title, description }: { title: string; description: string }) => (
-//     <div className='flex flex-col self-start'>
-//         <h1 className='card-title'>{title}</h1>
-//         <p className='micro-text'>{description}</p>
-//     </div>
-// );
-
 export function FeaturedProject({ title, description, slug, website, cover }: ProjectProps) {
     return (
-        <div className="relative flex flex-col items-center rounded-lg aspect-square overflow-hidden">
+        <div className="relative flex flex-col items-center rounded-lg pt-12 overflow-hidden">
             {cover && (
                 <Image src={cover} alt={title} fill className="object-cover" />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
             <div className='relative flex flex-col justify-end w-full h-full p-4 z-10'>
                 <MiniSpacer />
-                <h3 className='card-title text-white'>{title}</h3>
-                <p className='micro-text text-gray-200'>{description}</p>
+                <h3 className='card-title text-white text-shadow-lg'>{title}</h3>
+                <p className='micro-text text-gray-200 text-shadow-lg'>{description}</p>
                 <MiniSpacer />
                 <div className='flex flex-row gap-2'>
                     {website && <ExternalLink name='Website' url={website} color='white' />}
@@ -36,8 +29,8 @@ export function RegularProject({ title, description, slug, website, icon, dates 
         <div className="flex items-start flex-col gap-2">
             <div className='flex flex-row gap-2'>
                 {icon && (
-                    <div className="flex-shrink-0 overflow-hidden self-start rounded-lg shadow-md">
-                        <Image src={icon} alt={title} width={36} height={36} className="rounded-lg" />
+                    <div className="flex-shrink-0 overflow-hidden self-start rounded-lg">
+                        <Image src={icon} alt={title} width={36} height={36} className="rounded-lg border-gray-200 border" />
                     </div>
                 )}
                 <div className='flex flex-col justify-center'>
