@@ -31,7 +31,7 @@ export default async function Home() {
   return (
     <Container>
       <Header>
-        <div className='flex flex-row gap-8 items-start'>
+        <div className='flex flex-row gap-2 md:gap-8 items-start'>
           <div className='flex flex-col flex-grow'>
             <HeaderTitle>Adam Skjervold</HeaderTitle>
             <HeaderSubtitle>Computer science dropout, YouTube sensation, SMMA veteran, now focusing on AI and SaaS.</HeaderSubtitle>
