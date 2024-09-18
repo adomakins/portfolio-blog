@@ -2,7 +2,7 @@ import Container from '@/components/container'
 import { HeaderTitle, HeaderSubtitle } from '@/components/header'
 import { Section, ContentSpacer } from '@/components/section'
 import { WideGrid } from '@/components/grid'
-import { InternalButton } from '@/components/link'
+import { InternalButton, InternalLink } from '@/components/link'
 import Footer from '@/components/footer'
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
 import { notionQuery } from '@/lib/utils'
@@ -31,7 +31,7 @@ export default async function Home() {
     <Container>
       <Header>
         <HeaderTitle>Adam Skjervold</HeaderTitle>
-        <HeaderSubtitle>SMMA veteran, now focusing on SaaS and content.</HeaderSubtitle>
+        <HeaderSubtitle>SMMA veteran, now focusing on SaaS and content at where I do XYZ.</HeaderSubtitle>
       </Header>
 
       <Section>
@@ -47,12 +47,10 @@ export default async function Home() {
       </Section>
 
       {/* 
-
       <Section>
         <h1 className="card-title">My Story</h1>
         <p>Read full story → /about</p>
       </Section>
-
       */}
 
       <Section>

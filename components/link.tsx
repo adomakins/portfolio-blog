@@ -14,7 +14,7 @@ export function ExternalLink({ name, url, color = 'black' }: LinkProps) {
 
     return (
         <a href={url} target="_blank" rel="noopener noreferrer">
-            <span className={`flex w-fit items-center gap-1 border-b ${borderBase} ${borderColor} transition-all duration-500`}>
+            <span className={`inline-flex items-center gap-1 border-b ${borderBase} ${borderColor} transition-all duration-500`}>
                 <p className={`text-sm font-medium ${textColor}`}>{name}</p>
                 <ArrowUpRight className={`w-4 h-4 ${textColor}`} />
             </span>
@@ -29,7 +29,7 @@ export function InternalLink({ name, url, color = 'black' }: LinkProps) {
 
     return (
         <Link href={url} rel="noopener noreferrer">
-            <span className={`flex w-fit items-center gap-1 border-b ${borderBase} ${borderColor} transition-all duration-500`}>
+            <span className={`inline-flex items-center gap-1 border-b ${borderBase} ${borderColor} transition-all duration-500`}>
                 <p className={`text-sm font-medium ${textColor}`}>{name}</p>
                 <ArrowRight className={`w-4 h-4 ${textColor}`} />
             </span>
