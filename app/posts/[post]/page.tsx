@@ -9,6 +9,15 @@ import { Section, SectionTitle } from '@/components/section'
 import { InternalLink, ExternalLink } from '@/components/link'
 import type { Metadata } from "next";
 
+export const revalidate = 60
+
+export async function generateStaticParams() {
+    const posts = await notionQuery('Posts', undefined, undefined);
+    return posts.map((post) => ({
+        post: post.slug,
+    }));
+}
+
 // Updated interfaces
 interface RichTextItem {
     text: string;

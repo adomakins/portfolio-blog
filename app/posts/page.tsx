@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     description: "A collection of posts that I've written about my experiences as an entrepreneur.",
 };
 
+export const revalidate = 60
 
 export default async function Posts() {
     const filterOptions: QueryDatabaseParameters['filter'] = {

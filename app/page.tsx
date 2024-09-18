@@ -21,6 +21,8 @@ const filterOptions: QueryDatabaseParameters['filter'] = {
   }
 }
 
+export const revalidate = 60
+
 export default async function Home() {
 
   const featuredProjects = await notionQuery('Projects', filterOptions, undefined);

@@ -9,6 +9,15 @@ import { InternalLink, ExternalLink } from '@/components/link'
 import { formatDateRange } from '../page'
 import type { Metadata } from "next";
 
+export const revalidate = 60
+
+export async function generateStaticParams() {
+    const projects = await notionQuery('Projects', undefined, undefined);
+    return projects.map((project) => ({
+        project: project.slug,
+    }));
+}
+
 // Updated interfaces
 interface RichTextItem {
     text: string;

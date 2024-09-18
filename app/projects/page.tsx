@@ -12,6 +12,8 @@ export const metadata: Metadata = {
     description: "A complete list of all the major projects I've worked on since becoming an entrepreneur.",
 };
 
+export const revalidate = 60
+
 export const formatDateRange = (startDate: string, endDate: string | null) => {
     const start = new Date(startDate);
     const now = new Date();

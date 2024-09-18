@@ -11,6 +11,8 @@ export const metadata: Metadata = {
     description: "A collection of my favorite tools that I use on a daily basis.",
 };
 
+export const revalidate = 60
+
 export default async function Tools() {
     const items = await notionQuery('Tools');
     const filterItems = (type: string) => items.filter(item => item.type === type);
