@@ -12,6 +12,7 @@ import { FeaturedProject, RegularProject } from '@/components/projects'
 import { Header } from '@/components/header'
 import Timeline from '@/components/timeline'
 import { formatDateRange } from '@/app/projects/page'
+import Image from 'next/image'
 
 const filterOptions: QueryDatabaseParameters['filter'] = {
   property: 'Featured',
@@ -30,8 +31,21 @@ export default async function Home() {
   return (
     <Container>
       <Header>
-        <HeaderTitle>Adam Skjervold</HeaderTitle>
-        <HeaderSubtitle>SMMA veteran, now focusing on SaaS and content at where I do XYZ.</HeaderSubtitle>
+        <div className='flex flex-row gap-8 items-start'>
+          <div className='flex flex-col flex-grow'>
+            <HeaderTitle>Adam Skjervold</HeaderTitle>
+            <HeaderSubtitle>Computer science dropout, YouTube sensation, SMMA veteran, now focusing on AI and SaaS.</HeaderSubtitle>
+          </div>
+          <div className='flex-shrink-0 w-24 h-24 rounded-lg overflow-hidden'>
+            <Image
+              src='/adam.webp'
+              alt='Adam Skjervold Profile Picture'
+              width={96}
+              height={96}
+              className='w-full h-full object-cover'
+            />
+          </div>
+        </div>
       </Header>
 
       <Section>
