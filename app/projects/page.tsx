@@ -6,6 +6,11 @@ import { FeaturedProject, RegularProject } from '@/components/projects'
 import { notionQuery } from '@/lib/utils'
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
 import Timeline from '@/components/timeline'
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Adam Skjervold's Projects",
+    description: "A complete list of all the major projects I've worked on since becoming an entrepreneur.",
+};
 
 export const formatDateRange = (startDate: string, endDate: string | null) => {
     const start = new Date(startDate);

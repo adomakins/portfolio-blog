@@ -5,6 +5,11 @@ import Footer from '@/components/footer'
 import { CoverTool, IconTool } from '@/components/tools'
 import { WideGrid, MiniGrid } from '@/components/grid'
 import { notionQuery } from '@/lib/utils'
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Adam Skjervold's Tools",
+    description: "A collection of my favorite tools that I use on a daily basis.",
+};
 
 export default async function Tools() {
     const items = await notionQuery('Tools');

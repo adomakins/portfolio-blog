@@ -7,6 +7,7 @@ import { ContentSpacer } from '@/components/section'
 import { Section, SectionTitle } from '@/components/section'
 import { InternalLink, ExternalLink } from '@/components/link'
 import { formatDateRange } from '../page'
+import type { Metadata } from "next";
 
 // Updated interfaces
 interface RichTextItem {
@@ -26,6 +27,7 @@ interface SectionData {
 
 // Simplified RenderRichText component to handle only links
 function RenderRichText({ richTextArray }: { richTextArray: RichTextItem[] }) {
+
     return (
         <>
             {richTextArray.map((item, index) => {
@@ -48,6 +50,21 @@ function RenderRichText({ richTextArray }: { richTextArray: RichTextItem[] }) {
             })}
         </>
     );
+}
+
+export async function generateMetadata({ params }: { params: { project: string } }): Promise<Metadata> {
+    const filterOptions: QueryDatabaseParameters['filter'] = {
+        property: 'Slug',
+        rich_text: {
+            equals: params.project,
+        },
+    };
+    const project = await notionQuery('Projects', filterOptions, undefined).then((project) => project[0]);
+
+    return {
+        title: "Project: " + project.title,
+        description: project.description,
+    };
 }
 
 export default async function Project({ params }: { params: { project: string } }) {

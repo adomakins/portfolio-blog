@@ -7,6 +7,11 @@ import { CoverPost, TextPost } from '@/components/posts'
 import { notionQuery } from '@/lib/utils'
 import Timeline from '@/components/timeline'
 import { QueryDatabaseParameters } from '@notionhq/client/build/src/api-endpoints'
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+    title: "Adam Skjervold's Blog",
+    description: "A collection of posts that I've written about my experiences as an entrepreneur.",
+};
 
 
 export default async function Posts() {

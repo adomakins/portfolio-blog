@@ -6,8 +6,8 @@ import "./globals.css";
 // Pass domain as prop to pages
 
 export const metadata: Metadata = {
-  title: "Domain-Specific Title",
-  description: "Domain-specific description",
+  title: "Adam Skjervold",
+  description: "Blah blah blah (pretend I said something funny and/or clever here)",
 };
 
 export default function RootLayout({

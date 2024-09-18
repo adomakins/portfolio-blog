@@ -7,6 +7,7 @@ import { notionQuery, parsePage } from '@/lib/utils'
 import { ContentSpacer } from '@/components/section'
 import { Section, SectionTitle } from '@/components/section'
 import { InternalLink, ExternalLink } from '@/components/link'
+import type { Metadata } from "next";
 
 // Updated interfaces
 interface RichTextItem {
@@ -48,6 +49,21 @@ function RenderRichText({ richTextArray }: { richTextArray: RichTextItem[] }) {
             })}
         </>
     );
+}
+
+export async function generateMetadata({ params }: { params: { post: string } }): Promise<Metadata> {
+    const filterOptions: QueryDatabaseParameters['filter'] = {
+        property: 'Slug',
+        rich_text: {
+            equals: params.post,
+        },
+    };
+    const post = await notionQuery('Posts', filterOptions, undefined).then((post) => post[0]);
+
+    return {
+        title: post.title,
+        description: post.description,
+    };
 }
 
 export default async function Post({ params }: { params: { post: string } }) {
