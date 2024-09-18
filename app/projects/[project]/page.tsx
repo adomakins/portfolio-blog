@@ -86,38 +86,38 @@ export default async function Project({ params }: { params: { project: string } 
                 <ContentSpacer />
                 <p className="card-subtitle">{dateRange}</p>
             </Header>
-
-            {sections.map((section, index) => (
-                <Section key={index}>
-                    {section.title && <SectionTitle>{section.title}</SectionTitle>}
-                    {section.content.map((block, idx) => {
-                        switch (block.type) {
-                            case 'heading_2':
-                                return (
-                                    <h3 key={idx} className="mt-4 text-lg font-bold mb-2 text-gray-700">
-                                        <RenderRichText richTextArray={block.text} />
-                                    </h3>
-                                );
-                            case 'heading_3':
-                                return (
-                                    <h4 key={idx} className="mt-3 text-base font-bold mb-1 text-gray-600">
-                                        <RenderRichText richTextArray={block.text} />
-                                    </h4>
-                                );
-                            case 'paragraph':
-                                return (
-                                    <div key={idx} className="mb-2 card-subtitle">
-                                        <RenderRichText richTextArray={block.text} />
-                                    </div>
-                                );
-                            // Handle other block types if needed
-                            default:
-                                return null;
-                        }
-                    })}
-                </Section>
-            ))}
-
+            <article>
+                {sections.map((section, index) => (
+                    <Section key={index}>
+                        {section.title && <SectionTitle>{section.title}</SectionTitle>}
+                        {section.content.map((block, idx) => {
+                            switch (block.type) {
+                                case 'heading_2':
+                                    return (
+                                        <h3 key={idx} className="mt-4 text-lg font-bold mb-2 text-gray-700">
+                                            <RenderRichText richTextArray={block.text} />
+                                        </h3>
+                                    );
+                                case 'heading_3':
+                                    return (
+                                        <h4 key={idx} className="mt-3 text-base font-bold mb-1 text-gray-600">
+                                            <RenderRichText richTextArray={block.text} />
+                                        </h4>
+                                    );
+                                case 'paragraph':
+                                    return (
+                                        <div key={idx} className="mb-2 card-subtitle">
+                                            <RenderRichText richTextArray={block.text} />
+                                        </div>
+                                    );
+                                // Handle other block types if needed
+                                default:
+                                    return null;
+                            }
+                        })}
+                    </Section>
+                ))}
+            </article>
             <Footer />
         </Container>
     );
