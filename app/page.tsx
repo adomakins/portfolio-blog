@@ -21,6 +21,8 @@ const filterOptions: QueryDatabaseParameters['filter'] = {
   }
 }
 
+// Read CSV file from
+
 export const revalidate = 60
 
 export default async function Home() {
@@ -45,6 +47,7 @@ export default async function Home() {
               width={96}
               height={96}
               className='w-full h-full object-cover'
+              priority
             />
           </div>
         </div>

@@ -7,7 +7,7 @@ export function FeaturedProject({ title, description, slug, website, cover }: Pr
     return (
         <div className="relative flex flex-col items-center rounded-lg pt-12 overflow-hidden">
             {cover && (
-                <Image src={cover} alt={title} fill className="object-cover" />
+                <Image src={cover} alt={title} fill className="object-cover" priority />
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
             <div className='relative flex flex-col justify-end w-full h-full p-4 z-10'>

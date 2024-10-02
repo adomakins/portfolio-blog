@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="py-8 md:py-20 px-2.5 sm:px-0 max-w-[600px] mx-auto w-full">
         <Analytics />
-        {children}
+      {children}
       </body>
     </html >
   );
